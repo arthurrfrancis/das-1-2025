@@ -29,3 +29,27 @@ Monolito
   - Deploy como um único sistema
   - Executado como um único processo no sistema operacional
   - Único banco de dados
+
+
+## Aula 05/03
+
+- Arquitetura orientada a mensagens está bem popular
+- Big ball of mud é como se chama o padrão anti-arquitetural
+- Padrão arquitetural = solução para um problema específico
+  - MVC - Separa as responsabilidades (Model (dados) - View (tela) - Control(comportamento))
+- Estilo de arquitetura = organização do projeto
+- Linux possui arquitetura monolítica
+- Arquitetura em camadas
+  - Divisão de responsabilidade
+  - Perfomance
+  - Segurança
+  - Manunibilidade
+  - Camada de visualização
+    - Possui requisitos próprios
+  - Camada lógica de negócio
+    - Local central para definição e atualização das regras
+    - Escalar o Backend para suportar as requisições
+  - Camada de persistência
+    - Banco de dados relacional - consolidada
+    - Resolve problemas de concorrência
+    - Permite compartilhamento de dados 
