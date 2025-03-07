@@ -53,3 +53,17 @@ Monolito
     - Banco de dados relacional - consolidada
     - Resolve problemas de concorrência
     - Permite compartilhamento de dados 
+
+## Aula 06/03
+
+Who Needs an Architect? - https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf
+
+- O que é arquitetura?
+    - Segundo Fowler, Arquitetura é uma palavra que é usada quando queremos falar de design mas soar de um jeito mais importante. Já a RUP define arquitetura como "o nível mais alto de um conceito de um sistema e seu ambiente", é uma organização ou estrutura de componentes importantes interagindo com as interfaces. Porém Ralph Johnson diz que arquitetura é o conhecimento compartilhado do design de um software. Esse conhecimento diz a respeito dos componentes e como essses componentes interagem com a interface.
+    
+- Qual o comportamento do arquiteto da "Matrix"?
+    - O arquiteto da Matrix faz todas as decisões importantes, faz elas sozinho pois pensa que o resto da equipe não possui habilidades suficientes para as decisões, e, geralmente, estas são feitas logo cedo para que todos tenham um plano para seguir.
+
+
+- Qual o comportamento do arquiteto ideal?
+    - O arquiteto deve estar bem atento ao que está acontecendo no projeto, procurando saber sobre problemas e tratando eles logo no início. Ele programa com o desenvolvedor
