@@ -67,3 +67,17 @@ Who Needs an Architect? - https://martinfowler.com/ieeeSoftware/whoNeedsArchitec
 
 - Qual o comportamento do arquiteto ideal?
     - O arquiteto deve estar bem atento ao que está acontecendo no projeto, procurando saber sobre problemas e tratando eles logo no início. Ele programa com o desenvolvedor
+
+
+## Aula 13/03
+
+  https://integrada.minhabiblioteca.com.br/reader/books/9788550819754/epubcfi/6/22[%3Bvnd.vst.idref%3Dcap2.xhtml]!/4/2/2/1:0[%2CCAP]
+
+  - Amplitute técninca
+  - Geralmente o programador é especializado em certas tecnologias
+  - O arquiteto precisa ter uma visão mais ampla, apesar de não saber tudo
+
+## Aula 19/03
+
+- Arquitetura é o que você não consegue pesquisar no Google
+- Não existe resposta certa nem errada, o que existe são trade-offs
