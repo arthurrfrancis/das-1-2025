@@ -81,3 +81,13 @@ Who Needs an Architect? - https://martinfowler.com/ieeeSoftware/whoNeedsArchitec
 
 - Arquitetura é o que você não consegue pesquisar no Google
 - Não existe resposta certa nem errada, o que existe são trade-offs
+
+## Aula 23/04
+
+-  Características Arquiteturais  https://integrada.minhabiblioteca.com.br/reader/books/9788550819754/epubcfi/6/26%5B%3Bvnd.vst.idref%3Dcap4.xhtml%5D!/4
+  Criar um resumo
+
+## Aula 24/4 
+
+- Fundamentos da Arquitetura de Software
+Criar um resum https://integrada.minhabiblioteca.com.br/reader/books/9788550819754/epubcfi/6/38%5B%3Bvnd.vst.idref%3Dcap9.xhtml%5D!/4
