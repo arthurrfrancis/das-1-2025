@@ -184,7 +184,7 @@ Falácias da Computação Distribuída
 3. A largura de banda é infinita 
    - Tráfego excessivo entre serviços pode congestionar a rede
 
-4. A rede é segura*
+4. A rede é segura
    - Cada endpoint distribuído precisa de proteção adicional
 
 5. A topologia nunca muda
