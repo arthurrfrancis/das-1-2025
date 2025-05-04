@@ -84,10 +84,125 @@ Who Needs an Architect? - https://martinfowler.com/ieeeSoftware/whoNeedsArchitec
 
 ## Aula 23/04
 
--  Características Arquiteturais  https://integrada.minhabiblioteca.com.br/reader/books/9788550819754/epubcfi/6/26%5B%3Bvnd.vst.idref%3Dcap4.xhtml%5D!/4
-  Criar um resumo
+-  Resumo Características Arquiteturais  https://integrada.minhabiblioteca.com.br/reader/books/9788550819754/epubcfi/6/26%5B%3Bvnd.vst.idref%3Dcap4.xhtml%5D!/4
+
+Introdução  
+Quando uma empresa desenvolve um software para resolver um problema, além dos requisitos funcionais, os arquitetos precisam considerar as características da arquitetura — aspectos críticos que influenciam o design e o sucesso do sistema, mas que não estão diretamente ligados ao domínio do problema.  
+
+O que são Características da Arquitetura?  
+São critérios de design que:  
+1. Vão além do domínio
+2. Influenciam a estrutura do sistema
+3. São essenciais para o sucesso da aplicação
+
+Exemplos: desempenho, segurança, escalabilidade, manutenibilidade
+
+Terminologia  
+- Requisitos não funcionais: Termo comum, mas considerado depreciativo
+- Atributos de qualidade: Termo usado, mas sugere avaliação posterior, não design
+- Características da arquitetura: Termo preferido, pois destaca sua importância crítica
+
+Classificação das Características da Arquitetura  
+1. Operacionais:  
+   - Disponibilidade, desempenho, recuperabilidade, escalabilidade
+2. Estruturais:  
+   - Modularidade, reutilização, manutenibilidade, portabilidade
+3. Transversais: 
+   - Segurança, acessibilidade, conformidade legal
+
+Desafios e Trade-offs  
+- Interdependência: Melhorar uma característica pode prejudicar outra
+- Complexidade: Adicionar muitas características aumenta a complexidade do design
+- Arquitetura "menos pior": Não existe uma solução perfeita; o objetivo é equilibrar as necessidades
+
+Padrões e Ambiguidades  
+- Não há uma lista universal de características da arquitetura
+- Termos como interoperabilidade e compatibilidade podem ter significados diferentes em contextos distintos
+- Organizações como a ISO tentam padronizar, mas as definições ainda são flexíveis
+
+Conclusão  
+Arquitetos devem:  
+- Identificar as características mais relevantes para o projeto
+- Equilibrar trade-offs para evitar soluções superdimensionadas
+- Adotar abordagens iterativas, permitindo ajustes conforme o sistema evolui
+A arquitetura de software não busca a perfeição, mas sim a melhor solução possível dentro das restrições e necessidades do projeto.
+  
 
 ## Aula 24/4 
 
-- Fundamentos da Arquitetura de Software
-Criar um resum https://integrada.minhabiblioteca.com.br/reader/books/9788550819754/epubcfi/6/38%5B%3Bvnd.vst.idref%3Dcap9.xhtml%5D!/4
+- Resumo Fundamentos da Arquitetura de Software https://integrada.minhabiblioteca.com.br/reader/books/9788550819754/epubcfi/6/38%5B%3Bvnd.vst.idref%3Dcap9.xhtml%5D!/4
+
+### Fundamentos dos Estilos de Arquitetura de Software  
+
+Os estilos de arquitetura, também chamados de padrões de arquitetura, descrevem formas nomeadas de organizar componentes de software, abrangendo diversas características arquiteturais. Esses estilos funcionam como atalhos para arquitetos experientes, permitindo discussões rápidas sobre estrutura, pontos fortes, fraquezas e estratégias de implementação.  
+
+ Estilos Fundamentais  
+
+1. Grande Bola de Lama (Big Ball of Mud)
+   - Sistema sem estrutura definida, com código desorganizado e acoplamento excessivo 
+   - Problemas: Dificuldade de manutenção, escalabilidade e testabilidade
+   - Comum em sistemas que cresceram sem governança
+
+2. Arquitetura Unitária
+   - Todo o software roda como uma única unidade, comum em sistemas embarcados ou restritos
+   - Limitações: Dificuldade em escalar ou adicionar funcionalidades complexas
+
+3. Cliente/Servidor
+   - Separa front-end (cliente) e back-end (servidor)
+   - Variações:  
+     - Desktop + banco de dados
+     - Navegador + servidor web
+
+4. Três Camadas
+   - Camada de apresentação, lógica de negócio e dados
+   - Popular em sistemas corporativos dos anos 1990/2000
+
+Monolítico vs. Distribuído  
+
+1. Monolítico
+   - Todo o código é implementado como uma única unidade
+   - Exemplos:
+     - Arquitetura em Camadas
+     - Pipeline
+     - Microkernel
+
+3. Distribuído  
+   - Componentes independentes comunicando-se via rede
+   - Exemplos: 
+     - Baseada em Serviços
+     - Orientada a Evento
+     - Baseada em Espaços
+    
+Falácias da Computação Distribuída  
+
+1. A rede é confiável
+   - Problemas de conexão podem causar falhas inesperadas
+
+2. A latência é zero
+   - Chamadas remotas são mais lentas que locais
+
+3. A largura de banda é infinita 
+   - Tráfego excessivo entre serviços pode congestionar a rede
+
+4. A rede é segura*
+   - Cada endpoint distribuído precisa de proteção adicional
+
+5. A topologia nunca muda
+   - Alterações na infraestrutura afetam a comunicação
+
+6. Existe apenas um administrador
+   - Coordenação entre múltiplas equipes é complexa
+
+7. O custo do transporte é zero
+   - Infraestrutura distribuída exige mais hardware e configuração
+
+8. A rede é homogênea
+   - Dispositivos de diferentes fabricantes podem ter incompatibilidades
+
+Outros Desafios em Sistemas Distribuídos  
+- Log distribuído: Dificuldade em rastrear erros em múltiplos serviços
+- Transações distribuídas: Consistência eventual em vez de ACID
+- Versionamento de contratos: Manter compatibilidade entre APIs evolutivas
+
+Conclusão  
+Escolher um estilo arquitetural envolve trade-offs entre simplicidade, escalabilidade e resiliência. Arquiteturas monolíticas são mais simples, enquanto distribuídas oferecem flexibilidade, mas exigem lidar com complexidades de rede. O entendimento desses fundamentos ajuda arquitetos a tomar decisões equilibradas.
