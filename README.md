@@ -206,3 +206,92 @@ Outros Desafios em Sistemas Distribuídos
 
 Conclusão  
 Escolher um estilo arquitetural envolve trade-offs entre simplicidade, escalabilidade e resiliência. Arquiteturas monolíticas são mais simples, enquanto distribuídas oferecem flexibilidade, mas exigem lidar com complexidades de rede. O entendimento desses fundamentos ajuda arquitetos a tomar decisões equilibradas.
+
+## Aula 28/05
+
+Arquitetura baseada em Serviços https://integrada.minhabiblioteca.com.br/reader/books/9788550819754/epubcfi/6/46[%3Bvnd.vst.idref%3Dcap13.xhtml]!/4/2/2/1:0[%2CCAP]
+
+### Conceito Geral
+
+A arquitetura de microsserviços é um estilo arquitetural onde uma aplicação é dividida em pequenos serviços independentes, cada um com uma responsabilidade bem definida. Esses serviços se comunicam entre si, geralmente por meio de chamadas de rede. O objetivo principal é o alto desacoplamento, permitindo maior escalabilidade, flexibilidade e evolução contínua dos sistemas.
+
+
+### Histórico e Filosofia
+
+* O termo "microsserviços" foi popularizado por Martin Fowler e James Lewis em 2014.
+* Baseia-se fortemente nos princípios de DDD (Domain-Driven Design), especialmente no conceito de **contexto delimitado**.
+* Prefere duplicação à reutilização para evitar acoplamento entre domínios.
+* Cada serviço é modelado em torno de um domínio de negócio ou fluxo de trabalho.
+
+### Características Principais
+
+**Distribuição**
+
+* Cada microsserviço roda em um processo separado, utilizando máquinas virtuais, contêineres ou instâncias na nuvem.
+
+**Contexto Delimitado**
+
+* Cada serviço encapsula todos os elementos necessários para sua operação, como código, banco de dados e lógica de negócio.
+
+**Granularidade**
+
+* Encontrar o tamanho adequado dos serviços é essencial. Serviços muito pequenos podem aumentar o overhead de comunicação e dificultar a manutenção.
+* A definição de microsserviço é um rótulo, não uma regra fixa.
+
+**Isolamento de Dados**
+
+* Evita o uso de bancos de dados compartilhados.
+* Cada serviço é dono do seu banco e define suas próprias regras de persistência.
+
+**Camada de API**
+
+* Uma camada opcional usada para facilitar integração com consumidores, descoberta de serviços e implementação de funcionalidades operacionais.
+
+**Reutilização Operacional**
+
+* Uso do padrão **sidecar** para encapsular funcionalidades comuns como log, monitoramento e autenticação.
+* Composição de **malhas de serviços** para gerenciar e observar os microsserviços de forma unificada.
+
+---
+
+### Comunicação
+
+**Síncrona**
+
+* Utiliza chamadas diretas entre serviços (ex: HTTP, REST).
+* Requer padronização de protocolos para manter interoperabilidade em ambientes heterogêneos.
+
+**Assíncrona**
+
+* Baseada em eventos e mensagens.
+* Utiliza padrões como **coreografia** (sem coordenador central) e **orquestração** (com um serviço mediador para controle de fluxo).
+
+**Coreografia**
+
+* Cada serviço toma decisões e chama outros quando necessário.
+* Preserva o desacoplamento, mas aumenta a complexidade de coordenação e tratamento de erros.
+
+**Orquestração**
+
+* Um serviço central coordena as interações entre os outros.
+* Pode ser útil em fluxos de trabalho mais complexos, mas introduz acoplamento.
+
+### Transações e Sagas
+
+* Transações distribuídas devem ser evitadas sempre que possível.
+* O padrão **saga** é utilizado quando necessário: divide uma transação em várias etapas coordenadas por um mediador, com compensações em caso de falhas.
+* 
+### Avaliação das Características
+
+* **Altamente escalável e elástico**
+* **Fortemente evolutiva**
+* **Alta tolerância a falhas quando bem projetada**
+* **Desempenho pode ser um desafio devido à natureza distribuída**
+* **Requer automação e práticas DevOps maduras**
+
+
+A arquitetura de microsserviços exige um investimento significativo em automação, observabilidade e práticas modernas de engenharia. Quando bem aplicada, proporciona uma base sólida para sistemas complexos, altamente escaláveis e alinhados às mudanças constantes do negócio. Porém, sua complexidade exige arquitetos experientes, capazes de equilibrar desacoplamento, granularidade e desempenho com inteligência.
+
+
+Arquitetura baseada em Microsserviços https://integrada.minhabiblioteca.com.br/reader/books/9788550819754/epubcfi/6/54[%3Bvnd.vst.idref%3Dcap17.xhtml]!/4/2
+
