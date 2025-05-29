@@ -209,7 +209,78 @@ Escolher um estilo arquitetural envolve trade-offs entre simplicidade, escalabil
 
 ## Aula 28/05
 
-Arquitetura baseada em Serviços https://integrada.minhabiblioteca.com.br/reader/books/9788550819754/epubcfi/6/46[%3Bvnd.vst.idref%3Dcap13.xhtml]!/4/2/2/1:0[%2CCAP]
+Arquitetura baseada em Serviços https://integrada.minhabiblioteca.com.br/reader/books/9788550819754/epubcfi/6/46[%3Bvnd.vst.idref%3Dcap13.xhtml]!/4/2/2/1:0[%2CCAP]:
+
+A Arquitetura Baseada em Serviços é uma abordagem distribuída e orientada por domínio, que combina algumas características de microsserviços com maior simplicidade. Ela se destaca pela **flexibilidade**, **facilidade de manutenção** e **baixo custo operacional**, tornando-se uma escolha prática para muitas aplicações corporativas.
+
+
+### **Características Principais**
+
+* **Serviços Independentes e Granulares**
+  Os serviços representam partes do domínio de negócio e são implantados separadamente, mas tendem a ser maiores e mais coesos que os microsserviços.
+
+* **Banco de Dados Compartilhado**
+  Em geral, os serviços compartilham um banco de dados monolítico. Isso permite uso de SQL e transações ACID, mas aumenta o acoplamento entre os serviços.
+
+* **Implantação Simples**
+  Os serviços são implantados como aplicações tradicionais (ex: EAR, WAR), sem necessidade de conteinerização (embora suportem).
+
+* **Topologia em Camadas**
+  A estrutura básica inclui: interface de usuário (UI), serviços de domínio separados e banco de dados compartilhado. A UI pode se comunicar diretamente com os serviços ou via API Gateway.
+
+
+### **Design e Granularidade**
+
+* Cada serviço do domínio costuma ser estruturado em camadas (API, negócio, persistência).
+* A granularidade maior dos serviços permite manter transações locais e ACID.
+* A orquestração de processos ocorre dentro do serviço, diferentemente dos microsserviços, que exigem coordenação entre múltiplos serviços.
+
+
+### **Variações Arquiteturais**
+
+* **UI Federada**: Interfaces separadas para cada domínio, permitindo escalabilidade e isolamento.
+* **Particionamento Lógico do Banco de Dados**: Divisão do banco em domínios lógicos com bibliotecas específicas por domínio.
+* **Camada de API (opcional)**: Usada para abstrair, proteger e expor serviços para sistemas externos.
+
+### **Transações e Consistência**
+
+* **Transações ACID** são a norma, mantendo consistência e simplicidade na manipulação de dados.
+* **Transações distribuídas** e **BASE** são evitadas, reduzindo complexidade.
+* Rollbacks são diretos e seguros por estarem no escopo de um único serviço.
+
+
+### **Vantagens**
+
+* Boa **agilidade** e **testabilidade** devido ao escopo limitado dos serviços.
+* **Facilidade de implementação**: mais simples que microsserviços ou arquiteturas baseadas em eventos.
+* **Alta confiabilidade**: menos tráfego entre serviços e menos dependências.
+* **Custo reduzido**: menos necessidade de infraestrutura complexa e automações.
+
+
+### **Desvantagens e Cuidados**
+
+* **Acoplamento no banco de dados**: alterações em tabelas podem afetar múltiplos serviços.
+* **Menor elasticidade** que microsserviços, pois os serviços são maiores e menos especializados.
+* **Risco de impacto em múltiplas funcionalidades** ao alterar um serviço muito coeso.
+* Bibliotecas compartilhadas podem dificultar a manutenção e versionamento de mudanças.
+
+
+### **Quando Usar**
+
+* Sistemas de médio porte que precisam de modularidade sem a complexidade dos microsserviços.
+* Ambientes com equipes menores ou menor maturidade em DevOps.
+* Aplicações com domínio bem definido e necessidade de consistência forte nos dados.
+
+
+
+A Arquitetura Baseada em Serviços oferece uma abordagem balanceada entre modularidade e simplicidade. Ideal para empresas que buscam agilidade e confiabilidade sem os altos custos de uma arquitetura totalmente distribuída como microsserviços. É uma escolha pragmática para a maioria dos sistemas corporativos modernos.
+
+Se quiser, posso também comparar lado a lado com microsserviços ou monólitos. Deseja isso?
+
+
+---
+
+Arquitetura baseada em Microsserviços https://integrada.minhabiblioteca.com.br/reader/books/9788550819754/epubcfi/6/54[%3Bvnd.vst.idref%3Dcap17.xhtml]!/4/2
 
 ### Conceito Geral
 
@@ -252,8 +323,6 @@ A arquitetura de microsserviços é um estilo arquitetural onde uma aplicação 
 * Uso do padrão **sidecar** para encapsular funcionalidades comuns como log, monitoramento e autenticação.
 * Composição de **malhas de serviços** para gerenciar e observar os microsserviços de forma unificada.
 
----
-
 ### Comunicação
 
 **Síncrona**
@@ -293,5 +362,5 @@ A arquitetura de microsserviços é um estilo arquitetural onde uma aplicação 
 A arquitetura de microsserviços exige um investimento significativo em automação, observabilidade e práticas modernas de engenharia. Quando bem aplicada, proporciona uma base sólida para sistemas complexos, altamente escaláveis e alinhados às mudanças constantes do negócio. Porém, sua complexidade exige arquitetos experientes, capazes de equilibrar desacoplamento, granularidade e desempenho com inteligência.
 
 
-Arquitetura baseada em Microsserviços https://integrada.minhabiblioteca.com.br/reader/books/9788550819754/epubcfi/6/54[%3Bvnd.vst.idref%3Dcap17.xhtml]!/4/2
+
 
