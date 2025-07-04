@@ -320,8 +320,8 @@ A arquitetura de microsserviços é um estilo arquitetural onde uma aplicação 
 
 **Reutilização Operacional**
 
-* Uso do padrão **sidecar** para encapsular funcionalidades comuns como log, monitoramento e autenticação.
-* Composição de **malhas de serviços** para gerenciar e observar os microsserviços de forma unificada.
+* Uso do padrão sidecar para encapsular funcionalidades comuns como log, monitoramento e autenticação.
+* Composição de malhas de serviços para gerenciar e observar os microsserviços de forma unificada.
 
 ### Comunicação
 
@@ -333,7 +333,7 @@ A arquitetura de microsserviços é um estilo arquitetural onde uma aplicação 
 **Assíncrona**
 
 * Baseada em eventos e mensagens.
-* Utiliza padrões como **coreografia** (sem coordenador central) e **orquestração** (com um serviço mediador para controle de fluxo).
+* Utiliza padrões como coreografia e orquestração (com um serviço mediador para controle de fluxo).
 
 **Coreografia**
 
@@ -348,15 +348,15 @@ A arquitetura de microsserviços é um estilo arquitetural onde uma aplicação 
 ### Transações e Sagas
 
 * Transações distribuídas devem ser evitadas sempre que possível.
-* O padrão **saga** é utilizado quando necessário: divide uma transação em várias etapas coordenadas por um mediador, com compensações em caso de falhas.
-* 
+* O padrão saga é utilizado quando necessário: divide uma transação em várias etapas coordenadas por um mediador, com compensações em caso de falhas.
+ 
 ### Avaliação das Características
 
-* **Altamente escalável e elástico**
-* **Fortemente evolutiva**
-* **Alta tolerância a falhas quando bem projetada**
-* **Desempenho pode ser um desafio devido à natureza distribuída**
-* **Requer automação e práticas DevOps maduras**
+* Altamente escalável e elástico
+* Fortemente evolutiva
+* Alta tolerância a falhas quando bem projetada
+* Desempenho pode ser um desafio devido à natureza distribuída
+* Requer automação e práticas DevOps maduras
 
 
 A arquitetura de microsserviços exige um investimento significativo em automação, observabilidade e práticas modernas de engenharia. Quando bem aplicada, proporciona uma base sólida para sistemas complexos, altamente escaláveis e alinhados às mudanças constantes do negócio. Porém, sua complexidade exige arquitetos experientes, capazes de equilibrar desacoplamento, granularidade e desempenho com inteligência.
